@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Invoice Generator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="editor">
+        <h2>1. Edit Invoice</h2>
+
+        <div class="form-group">
+          <label>Invoice Header</label>
+          <input
+            type="text"
+            id="in-header"
+            value="INVOICE"
+            oninput="updatePreview()"
+            placeholder="Document Title"
+          />
+        </div>
+
+        <div style="display: flex; gap: 10px">
+          <div class="form-group" style="flex: 1">
+            <label>Invoice #</label>
+            <input
+              type="text"
+              id="in-num"
+              value="001"
+              oninput="updatePreview()"
+            />
+          </div>
+          <div class="form-group" style="flex: 1">
+            <label>Date</label>
+            <input type="date" id="in-date" oninput="updatePreview()" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>From (Your Details)</label>
+          <input
+            type="text"
+            id="in-from-name"
+            value="My Company"
+            oninput="updatePreview()"
+            placeholder="Business Name"
+          />
+          <input
+            type="text"
+            id="in-from-address"
+            value="123 Business Rd, City"
+            oninput="updatePreview()"
+            placeholder="Address"
+            style="margin-top: 5px"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Bill To (Client Details)</label>
+          <input
+            type="text"
+            id="in-to-name"
+            placeholder="Client Name"
+            oninput="updatePreview()"
+          />
+          <input
+            type="text"
+            id="in-to-address"
+            placeholder="Client Address"
+            oninput="updatePreview()"
+            style="margin-top: 5px"
+          />
+        </div>
+
+        <label>Items</label>
+        <table id="editor-table">
+          <thead>
+            <tr>
+              <th width="50%">Item</th>
+              <th width="15%">Qty</th>
+              <th width="20%">Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="editor-rows"></tbody>
+        </table>
+
+        <div class="actions">
+          <button class="btn btn-add" onclick="addEditorRow()">
+            + Add Item
+          </button>
+          <button class="btn btn-print" onclick="window.print()">
+            Print / Save PDF
+          </button>
+        </div>
+      </div>
+
+      <div class="preview-container">
+        <div class="invoice-paper">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 40px;
+            "
+          >
+            <div>
+              <h1 id="out-header" style="margin: 0; color: #333">INVOICE</h1>
+              <p style="margin: 5px 0; color: #666">
+                #<span id="out-num">001</span>
+              </p>
+            </div>
+            <div style="text-align: right">
+              <h3 id="out-from-name" style="margin: 0">My Company</h3>
+              <p id="out-from-address" style="margin: 5px 0; color: #666">
+                123 Business Rd
+              </p>
+              <p id="out-date" style="margin-top: 10px; font-weight: bold">
+                2023-10-25
+              </p>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 30px">
+            <p
+              style="
+                font-weight: bold;
+                color: #999;
+                font-size: 12px;
+                text-transform: uppercase;
+                margin-bottom: 5px;
+              "
+            >
+              Bill To:
+            </p>
+            <h3 id="out-to-name" style="margin: 0">Client Name</h3>
+            <p id="out-to-address" style="margin: 5px 0; color: #666">
+              Client Address
+            </p>
+          </div>
+
+          <table style="width: 100%; margin-bottom: 20px">
+            <thead>
+              <tr>
+                <th style="text-align: left">Description</th>
+                <th style="text-align: center">Qty</th>
+                <th style="text-align: right">Price</th>
+                <th style="text-align: right">Total</th>
+              </tr>
+            </thead>
+            <tbody id="preview-rows"></tbody>
+          </table>
+
+          <div
+            style="
+              text-align: right;
+              margin-top: 20px;
+              border-top: 2px solid #333;
+              padding-top: 10px;
+            "
+          >
+            <h3 style="margin: 0">Total: $<span id="out-total">0.00</span></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
