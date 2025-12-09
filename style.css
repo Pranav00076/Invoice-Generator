@@ -1,0 +1,181 @@
+body {
+ font-family: Arial, sans-serif;
+ background-color: #f0f0f0;
+ padding: 20px;
+ margin: 0;
+ height: 100vh;
+ box-sizing: border-box;
+ display: flex;
+ flex-direction: column;
+}
+
+
+h2 {
+ margin-top: 0;
+ color: #333;
+}
+
+
+.container {
+ display: flex;
+ gap: 20px;
+ flex: 1;
+ height: 100%;
+ overflow: hidden;
+}
+
+
+.editor {
+ flex: 1;
+ background: white;
+ padding: 20px;
+ border-radius: 8px;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ overflow-y: auto;
+ border: 1px solid #ddd;
+}
+
+
+.preview-container {
+ flex: 1;
+ background: #555;
+ padding: 20px;
+ border-radius: 8px;
+ overflow-y: auto;
+ display: flex;
+ justify-content: center;
+}
+
+
+.invoice-paper {
+ background: white;
+ width: 100%;
+ max-width: 700px;
+ min-height: 800px;
+ padding: 40px;
+ box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+ box-sizing: border-box;
+}
+
+
+.form-group {
+ margin-bottom: 15px;
+}
+label {
+ display: block;
+ font-weight: bold;
+ margin-bottom: 5px;
+ font-size: 12px;
+ color: #666;
+ text-transform: uppercase;
+}
+
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+ width: 100%;
+ padding: 8px;
+ border: 1px solid #ddd;
+ border-radius: 4px;
+ box-sizing: border-box;
+}
+
+
+table {
+ width: 100%;
+ border-collapse: collapse;
+ margin-top: 10px;
+}
+th {
+ text-align: left;
+ padding: 10px;
+ border-bottom: 2px solid #ddd;
+ font-size: 12px;
+ text-transform: uppercase;
+}
+td {
+ padding: 10px;
+ border-bottom: 1px solid #eee;
+ vertical-align: top;
+}
+
+
+.editor table td {
+ padding: 5px;
+}
+.editor input {
+ margin: 0;
+}
+
+
+.invoice-paper th {
+ border-bottom: 2px solid #333;
+}
+.invoice-paper td {
+ padding: 12px 10px;
+}
+.text-right {
+ text-align: right;
+}
+
+
+.btn {
+ padding: 10px 15px;
+ border: none;
+ cursor: pointer;
+ font-size: 14px;
+ border-radius: 4px;
+ margin-right: 10px;
+}
+.btn-add {
+ background-color: #4caf50;
+ color: white;
+}
+.btn-print {
+ background-color: #2196f3;
+ color: white;
+}
+.btn-delete {
+ background-color: #ff4444;
+ color: white;
+ padding: 5px 10px;
+ font-size: 12px;
+}
+.actions {
+ margin-top: 20px;
+ padding-top: 20px;
+ border-top: 1px solid #eee;
+}
+
+
+@media print {
+ body {
+   padding: 0;
+   background: white;
+   display: block;
+   height: auto;
+ }
+ .container {
+   display: block;
+   height: auto;
+   overflow: visible;
+ }
+ .editor {
+   display: none;
+ }
+ .preview-container {
+   display: block;
+   background: white;
+   padding: 0;
+   height: auto;
+   overflow: visible;
+ }
+ .invoice-paper {
+   box-shadow: none;
+   max-width: 100%;
+   width: 100%;
+   padding: 0;
+   margin: 0;
+ }
+}
