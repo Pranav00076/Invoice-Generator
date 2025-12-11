@@ -26,16 +26,13 @@ function removeRow(btn) {
 
 
 function updatePreview() {
- document.getElementById("out-header").innerText =
-   document.getElementById("in-header").value;
- document.getElementById("out-num").innerText =
-   document.getElementById("in-num").value;
- document.getElementById("out-date").innerText =
-   document.getElementById("in-date").value;
+ document.getElementById("out-header").innerText =document.getElementById("in-header").value;
+ document.getElementById("out-num").innerText =document.getElementById("in-num").value;
+ document.getElementById("out-date").innerText =document.getElementById("in-date").value;
 
 
  document.getElementById("out-from-name").innerText =
-   document.getElementById("in-from-name").value || "My Company";
+   document.getElementById("in-from-name").value || "Company";
  document.getElementById("out-from-address").innerText =
    document.getElementById("in-from-address").value;
 
@@ -65,11 +62,11 @@ function updatePreview() {
    const newRow = document.createElement("tr");
    newRow.innerHTML = `
                    <td style="padding: 10px; border-bottom: 1px solid #eee;">${desc}</td>
-                   <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">${qty}</td>
-                   <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: right;">$${price.toFixed(
+                   <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;"> ${qty}</td>
+                   <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: right;">₹${price.toFixed(
                      2
                    )}</td>
-                   <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: right;"><strong>$${total.toFixed(
+                   <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: right;"><strong>₹${total.toFixed(
                      2
                    )}</strong></td>
                `;
