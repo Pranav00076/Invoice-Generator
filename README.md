@@ -23,5 +23,5 @@ Print: Click Print / Save PDF to generate the document.
 
 Customization
 
-To change colors or layout, simply edit the CSS within the <style> block of the index.html file.
+To change colors or layout, simply edit the CSS inside the style.css file.
 
