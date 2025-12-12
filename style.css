@@ -148,9 +148,9 @@ td {
  border-top: 1px solid #eee;
 }
 
-@media screen and (max-width:600px){
-  .preview-container{display: none;}
-  *{font-size: 0.95em;}
+@media screen and (max-width:700px){
+  *{font-size: 0.9em;}
+  .container{flex-direction: column;flex-wrap: nowrap;}
 }
 
 
