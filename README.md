@@ -1,5 +1,5 @@
 Simple Invoice Generator by Pranav, Mustafa and Ujjwal.
-Deployed: https://pranav00076.github.io/Invoice-Generator/
+Deployed: [https://pranav00076.github.io/Invoice-Generator/](https://invoice-generator-proj.vercel.app/)
 
 A lightweight, single-file invoice generator built with HTML, CSS, and JavaScript.
 
